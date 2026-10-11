@@ -1,0 +1,4 @@
+<data-extraction-rules>
+    <cloud-backup><include domain="sharedpref" path="everdeep.xml"/></cloud-backup>
+    <device-transfer><include domain="sharedpref" path="everdeep.xml"/></device-transfer>
+</data-extraction-rules>

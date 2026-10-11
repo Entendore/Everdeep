@@ -1,0 +1,4 @@
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
+-keepclassmembers enum com.focusrealm.everdeep.game.** { *; }
+-keepclassmembers enum com.focusrealm.everdeep.** { *; }
