@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg" android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:orientation="horizontal"
+        android:paddingStart="18dp" android:paddingEnd="18dp"
+        android:paddingTop="14dp" android:paddingBottom="10dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium" android:letterSpacing="0.3"
+            android:text="EVERDEEP" android:textColor="@color/ember" android:textSize="12sp"/>
+        <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+        <TextView android:id="@+id/timer"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:fontFamily="monospace" android:text="⏳ 00:00"
+            android:textColor="@color/dim" android:textSize="12sp"/>
+        <View android:id="@+id/statusDot"
+            android:layout_width="9dp" android:layout_height="9dp"
+            android:layout_marginStart="16dp" android:background="@drawable/dot_moss"/>
+        <TextView android:id="@+id/statusText"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" android:ellipsize="end"
+            android:maxLines="1" android:maxWidth="150dp"
+            android:text="FOCUSED" android:textColor="@color/dim" android:textSize="12sp"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/banner"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="18dp" android:layout_marginEnd="18dp"
+        android:background="@drawable/panel_bg" android:padding="12dp"
+        android:text="⚠️ App monitoring is off — the hero can’t see your distractions. Tap to enable it in Accessibility settings."
+        android:textColor="@color/ember" android:textSize="12sp" android:visibility="gone"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingStart="18dp" android:paddingEnd="18dp"
+        android:paddingTop="14dp" android:paddingBottom="10dp">
+        <TextView android:id="@+id/portrait"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp" android:fontFamily="monospace" android:gravity="center"
+            android:text="(o_o)\n/|_|\\" android:textColor="@color/bone" android:textSize="13sp"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/heroName"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="—" android:textColor="@color/bone" android:textSize="15sp"/>
+            <TextView android:id="@+id/recordsLine"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:fontFamily="monospace"
+                android:text="🏆 best floor 0 · ⚰️ 0 fallen · ⚔️ 0 slain"
+                android:textColor="@color/dim" android:textSize="10sp"/>
+            <TextView android:id="@+id/standings"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:ellipsize="end"
+                android:fontFamily="monospace" android:maxLines="1"
+                android:textColor="@color/dim" android:textSize="10sp" android:visibility="gone"/>
+            <TextView android:id="@+id/hpAscii"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:fontFamily="monospace"
+                android:text="HP ▓▓▓▓▓▓▓▓░░ 24/24" android:textColor="@color/ember" android:textSize="11sp"/>
+            <TextView android:id="@+id/xpAscii"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:fontFamily="monospace"
+                android:text="XP ░░░░░░░░░░ 0/20" android:textColor="@color/moss" android:textSize="10sp"/>
+            <TextView android:id="@+id/skillsRow"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" android:ellipsize="end"
+                android:fontFamily="monospace" android:maxLines="2"
+                android:textColor="@color/dim" android:textSize="10sp"/>
+            <TextView android:id="@+id/heroStats"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" android:fontFamily="monospace"
+                android:textColor="@color/dim" android:textSize="11sp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="14dp" android:gravity="end" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:letterSpacing="0.25" android:text="FLOOR"
+                android:textColor="@color/dim" android:textSize="10sp"/>
+            <TextView android:id="@+id/depthNum"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:fontFamily="monospace" android:text="-"
+                android:textColor="@color/emberBright" android:textSize="44sp"/>
+            <TextView android:id="@+id/turnLabel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:fontFamily="monospace" android:text="turn 0"
+                android:textColor="@color/dim" android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.focusrealm.everdeep.GameView android:id="@+id/game"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_marginStart="14dp" android:layout_marginEnd="14dp"
+        android:layout_marginTop="2dp" android:layout_marginBottom="6dp"
+        android:layout_weight="1" android:background="@color/voidBg"/>
+
+    <ScrollView android:id="@+id/logScroll"
+        android:layout_width="match_parent" android:layout_height="106dp"
+        android:layout_marginStart="18dp" android:layout_marginEnd="18dp"
+        android:fillViewport="true" android:scrollbars="none">
+        <LinearLayout android:id="@+id/logList"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:orientation="horizontal"
+        android:paddingStart="14dp" android:paddingEnd="14dp"
+        android:paddingTop="10dp" android:paddingBottom="14dp">
+        <TextView android:id="@+id/sessionBtn"
+            android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1.4"
+            android:background="@drawable/btn_primary" android:fontFamily="sans-serif-medium"
+            android:gravity="center" android:letterSpacing="0.12"
+            android:text="⏸ PAUSE" android:textColor="#171106" android:textSize="12sp"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <TextView android:id="@+id/speedBtn"
+            android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="0.55"
+            android:background="@drawable/btn_outline" android:fontFamily="monospace"
+            android:gravity="center" android:text="1×" android:textColor="@color/bone" android:textSize="12sp"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <TextView android:id="@+id/chronBtn"
+            android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="0.5"
+            android:background="@drawable/btn_outline" android:gravity="center"
+            android:text="📜" android:textSize="15sp"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <TextView android:id="@+id/legacyBtn"
+            android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="0.5"
+            android:background="@drawable/btn_outline" android:gravity="center"
+            android:text="🔥" android:textSize="15sp"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <TextView android:id="@+id/codexBtn"
+            android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="0.5"
+            android:background="@drawable/btn_outline" android:gravity="center"
+            android:text="📖" android:textSize="15sp"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <TextView android:id="@+id/blockBtn"
+            android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1.2"
+            android:background="@drawable/btn_outline" android:gravity="center"
+            android:letterSpacing="0.05" android:text="⛓️ BLOCK" android:textColor="@color/bone" android:textSize="11sp"/>
+        <Space android:layout_width="8dp" android:layout_height="1dp"/>
+        <TextView android:id="@+id/heroBtn"
+            android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1.2"
+            android:background="@drawable/btn_outline" android:gravity="center"
+            android:letterSpacing="0.05" android:text="🕯️ HERO" android:textColor="@color/bone" android:textSize="11sp"/>
+    </LinearLayout>
+
+    <ScrollView android:id="@+id/blockPanel"
+        android:layout_width="match_parent" android:layout_height="300dp"
+        android:layout_marginStart="18dp" android:layout_marginEnd="18dp"
+        android:layout_marginBottom="12dp" android:background="@drawable/panel_bg"
+        android:scrollbars="none" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:letterSpacing="0.15"
+                android:text="THE HERO WAITS WHILE THESE ARE OPEN"
+                android:textColor="@color/dim" android:textSize="11sp"/>
+            <LinearLayout android:id="@+id/blockRows"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" android:orientation="vertical"/>
+            <EditText android:id="@+id/pkgInput"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:background="#1A140E"
+                android:fontFamily="monospace" android:hint="add any app: com.company.app"
+                android:inputType="text" android:padding="10dp" android:singleLine="true"
+                android:textColor="@color/bone" android:textColorHint="#6B6150" android:textSize="12sp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:orientation="horizontal">
+                <TextView android:id="@+id/addBtn"
+                    android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1"
+                    android:background="@drawable/btn_outline" android:gravity="center"
+                    android:text="ADD" android:textColor="@color/bone" android:textSize="11sp"/>
+                <Space android:layout_width="10dp" android:layout_height="1dp"/>
+                <TextView android:id="@+id/previewBtn"
+                    android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1"
+                    android:background="@drawable/btn_outline" android:gravity="center"
+                    android:text="PREVIEW PAUSE" android:textColor="@color/bone" android:textSize="11sp"/>
+            </LinearLayout>
+            <TextView android:id="@+id/a11yBtn"
+                android:layout_width="match_parent" android:layout_height="38dp"
+                android:layout_marginTop="10dp" android:background="@drawable/btn_outline"
+                android:gravity="center" android:text="OPEN ACCESSIBILITY SETTINGS"
+                android:textColor="@color/dim" android:textSize="11sp"/>
+            <LinearLayout android:id="@+id/sessionRow"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:orientation="horizontal"/>
+            <LinearLayout android:id="@+id/toggleRow"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:orientation="horizontal"/>
+            <EditText android:id="@+id/siteInput"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:background="#1A140E"
+                android:fontFamily="monospace" android:hint="block any site: example.com"
+                android:inputType="text" android:padding="10dp" android:singleLine="true"
+                android:textColor="@color/bone" android:textColorHint="#6B6150" android:textSize="12sp"/>
+            <LinearLayout android:id="@+id/vpnRow"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:orientation="horizontal"/>
+            <TextView android:id="@+id/sitesLine"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" android:fontFamily="monospace"
+                android:textColor="@color/dim" android:textSize="10sp"/>
+            <LinearLayout android:id="@+id/wardRow"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:orientation="horizontal"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" android:orientation="horizontal">
+                <EditText android:id="@+id/wardStartIn"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:background="#1A140E" android:fontFamily="monospace" android:gravity="center"
+                    android:hint="start h" android:inputType="number" android:padding="8dp"
+                    android:singleLine="true" android:textColor="@color/bone"
+                    android:textColorHint="#6B6150" android:textSize="12sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:paddingStart="6dp" android:paddingEnd="6dp"
+                    android:text="→" android:textColor="@color/dim"/>
+                <EditText android:id="@+id/wardEndIn"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:background="#1A140E" android:fontFamily="monospace" android:gravity="center"
+                    android:hint="end h" android:inputType="number" android:padding="8dp"
+                    android:singleLine="true" android:textColor="@color/bone"
+                    android:textColorHint="#6B6150" android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

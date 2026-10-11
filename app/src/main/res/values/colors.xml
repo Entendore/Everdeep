@@ -1,0 +1,8 @@
+<resources>
+    <color name="bg">#0B0908</color><color name="surface">#14100C</color>
+    <color name="line">#2A221A</color><color name="bone">#E9DFC8</color>
+    <color name="dim">#8D8168</color><color name="ember">#D98E4A</color>
+    <color name="emberBright">#F0A35C</color><color name="danger">#C4483C</color>
+    <color name="moss">#8FA876</color><color name="track">#201812</color>
+    <color name="voidBg">#080706</color><color name="ic_launcher_bg">#14100C</color>
+</resources>

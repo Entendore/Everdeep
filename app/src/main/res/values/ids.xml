@@ -1,0 +1,5 @@
+<resources>
+    <item type="id" name="shieldBtn"/>
+    <item type="id" name="soundBtn"/>
+    <item type="id" name="darkBtn"/>
+</resources>
